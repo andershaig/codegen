@@ -2,31 +2,58 @@
 
   // Settings
   var s = {
+    debug: true,
     version: '0.0.1'
   };
 
-  // Templates
-  var t = {
-    text: '<input type="text" id="{{ id }}" value="{{ default }}">'
-  }
-
-  // Sample Public Function
-  codeg.log = function () {
-      console.log("This is a public function!");
+  // Logging
+  var l = function (msg) {
+    if (s.debug) {
+      console.log(msg);
+    }
   };
+
+  // Templates
+  var templates = [
+    {
+      type: 'text',
+      raw: '<input type="text" id="{{ id }}" value="{{ default }}">'
+    },
+    {
+      type: 'textarea',
+      raw: '<textarea id="{{ id }}">{{ default }}</textarea>'
+    }
+  ];
+
+  // Render Methods
+  var render = {};
+
+  // Generate Render Methods
+  var compile = function () {
+    for (var i = 0; i < templates.length; i++) {
+      var template = templates[i];
+      render[template.type] = Handlebars.compile(template.raw);
+    }
+  }
   
   // Setup
   var init = function () {
-    var template = Handlebars.compile(t.text);
+    compile();
 
     var data = {
       "id": "testing",
       "default": "my default value"
     };
 
-    var result = template(data);
+    var text = render.text(data);
+    var textarea = render.textarea(data);
 
-    console.log(result);
+    l(text);
+    l(textarea);
+
+    $(document).ready( function () {
+      $('.codeg-input').append(text).append(textarea);
+    });
   };
 
   // Kick it off
