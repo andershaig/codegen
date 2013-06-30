@@ -1,47 +1,17 @@
 /* ----------------------------
 Author: Anders Haig = minim.co
-Version: 1.4
+Version: 1.5
 ---------------------------- */
-
-/* ----------------------------
-		 CSS Reset 
----------------------------- */
-
-html, body, ul, ol, li, form, fieldset, legend {
-	margin: 0;
-	padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6, p { margin-top: 0; }
-
-fieldset,img { border: 0; }
-
-legend { color: #000; }
-
-li { list-style: none; }
-
-sup { vertical-align: text-top; }
-
-sub { vertical-align: text-bottom; }
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-caption, th, td {
-	text-align: left;
-	vertical-align: top;
-	font-weight: normal;
-}
 
 /*----------------------/
 /// Global //////////////
 /----------------------*/
 * {
+  margin: 0;
+  padding: 0;
   -webkit-box-sizing: border-box;
      -moz-box-sizing: border-box;
-  		  box-sizing: border-box;
+  		    box-sizing: border-box;
 }
 
 html {
@@ -53,7 +23,7 @@ html {
 }
 
 body {
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.35;
   font-family: 'Helvetica Neue', Helvetica, 'Arial Rounded MT Bold', Arial, sans-serif;
   font-weight: 400;
@@ -122,8 +92,7 @@ a {
 /*----------------------/
 /// Grid ////////////////
 /----------------------*/
-.clearfix:after,
-.row:after {
+.clearfix:after {
   content: '.';
   display: block;
   height: 0;
@@ -131,17 +100,15 @@ a {
   visibility: hidden;
 }
 
-.clearfix,
-.row {
+.clearfix {
   display: inline-block;
 }
 
-.clearfix,
-.row {
+.clearfix {
   display: block;
 }
 
-.container {
+.codeg-container {
   width: 100%;
   position: relative;
   margin: 0 auto;
@@ -150,80 +117,6 @@ a {
      -moz-backface-visibility: hidden;
        -o-backface-visibility: hidden;
           backface-visibility: hidden;
-}
-
-.row {
-  position: relative;
-  width: 100%;
-  *zoom: 1;
-}
-
-.row [class*="span"] {
-  display: block;
-  float: left;
-  width: 100%;
-  margin: 0 0.833333333333%;
-  *margin: 0 .83697035824695%;
-}
-
-.row .span12 {
-  width: 98.333333333333%;
-  *width: 98.28014184397129%;
-}
-
-.row .span11 {
-  width: 90.0%;
-  *width: 89.94680851063829%;
-}
-
-.row .span10 {
-  width: 81.666666666667%;
-  *width: 81.61347517730529%;
-}
-
-.row .span9 {
-  width: 73.333333333333%;
-  *width: 73.28014184397129%;
-}
-
-.row .span8 {
-  width: 65.0%;
-  *width: 64.94680851063829%;
-}
-
-.row .span7 {
-  width: 56.666666666667%;
-  *width: 56.61347517730529%;
-}
-
-.row .span6 {
-  width: 48.333333333333%;
-  *width: 48.28014184397129%;
-}
-
-.row .span5 {
-  width: 40.0%;
-  *width: 39.94680851063829%;
-}
-
-.row .span4 {
-  width: 31.666666666667%;
-  *width: 31.61347517730529%;
-}
-
-.row .span3 {
-  width: 23.333333333333%;
-  *width: 23.28014184397129%;
-}
-
-.row .span2 {
-  width: 15%;
-  *width: 14.94680851063829%;
-}
-
-.row .span1 {
-  width: 6.666666666667%;
-  *width: 6.61347517730529%;
 }
 
 /*----------------------/

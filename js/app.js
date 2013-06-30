@@ -1,4 +1,5 @@
 (function ($, codeg, undefined) {
+
   // Settings
   var s = {
     version: '0.0.1'
@@ -14,9 +15,9 @@
       console.log("This is a public function!");
   };
   
-  // Kick it off
+  // Setup
   var init = function () {
-    var template = Handlebars.compile(source);
+    var template = Handlebars.compile(t.text);
 
     var data = {
       "id": "testing",
@@ -27,6 +28,9 @@
 
     console.log(result);
   };
-  
+
+  // Kick it off
+  init();
+
 }(jQuery, window.codeg = window.codeg || {}));
 
